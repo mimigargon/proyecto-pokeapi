@@ -1,59 +1,55 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
+$principal-font: 'Pokemon Solid', sans-serif;
+$secondary-font: 'Lato', sans-serif;
+
+
 body {
-    background-color: orangered;
-    margin: 0;
-    font-family: rubik;
-    color: white;
-  }
-  .container {
-    padding: 40px;
-    margin: 0 auto;
-  }
-  h1 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 54px;
-  }
-  .card {
-    list-style: none;
-    padding: 40px;
-    background-color: #f4f4f4;
-    color: #222;
-    text-align: center;
-  }
-  .card-title {
-    text-transform: uppercase;
-    font-size: 32px;
-    font-weight: normal;
-    margin-bottom: 0;
-  }
-  .card-subtitle {
-    font-weight: lighter;
-    color: #666;
-    margin-top: 5px;
-  }
-  .card-image {
-    height: 180px;
-  }
-  #pokedex {
-    padding-inline-start: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 20px;
-  }
-  .card:hover {
-    animation: bounce 0.5s linear;
-  }
-  @keyframes bounce {
-    20% {
-      transform: translateY(-6px);
+    background-image: url(./Images/batthern-1920x1080.png);
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+
+        .poke-logo {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            padding-bottom: 50px;
+
+        }
     }
-    40% {
-      transform: translateY(0px);
-    }
-    60% {
-      transform: translateY(-2px);
-    }
-    80% {
-      transform: translateY(-0px);
-    }
-  }
+    .poke-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .poke-card {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            font-family: $secondary-font;
+            background: #efefbb;
+            background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
+            padding: 5px 20px 5px 20px;
+            margin: 10px 10px 10px 10px;
+            border: 2px solid;
+            border-radius: 10%;
+        
+        }
+      }
+      
+      
+      
+}
+
+
