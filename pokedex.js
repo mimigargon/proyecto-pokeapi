@@ -1,4 +1,5 @@
 const EVERY_POKEMON = [];
+const TYPES = ['all'];
 
 const getAllPokemons = () => {
    return fetch ('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
@@ -42,15 +43,24 @@ const drawPokemons = (pokemon) => {
         const pokeImage = document.createElement('img');
         pokeImgContainer.appendChild(pokeImage)
         pokeImage.src = poke.image;
+        const pokeInfoContainer = document.createElement('div');
+        pokeInfoContainer.classList.add('poke-info-container');
+        pokeDiv.appendChild(pokeInfoContainer);
         const pokeName = document.createElement('h3');
-        pokeDiv.appendChild(pokeName);
-        pokeName.innerText = poke.name;
+        pokeInfoContainer.appendChild(pokeName);
+        pokeName.innerText = poke.name[0].toUpperCase() + poke.name.slice(1);
+        const pokeIDContainer = document.createElement('span');
+        pokeIDContainer.classList.add('poke-id-container');
+        pokeInfoContainer.appendChild(pokeIDContainer);
         const pokeId = document.createElement('p');
-        pokeDiv.appendChild(pokeId);
-        pokeId.innerText = poke.id;
+        pokeIDContainer.appendChild(pokeId);
+        pokeId.innerText = '#' + poke.id;
+        const pokeTypeContainer = document.createElement('div');
+        pokeTypeContainer.classList.add('poke-type-container');
+        pokeInfoContainer.appendChild(pokeTypeContainer);
         const pokeType = document.createElement('p');
-        pokeDiv.appendChild(pokeType);
-        pokeType.innerText = poke.type;
+        pokeTypeContainer.appendChild(pokeType);
+        pokeType.innerText = 'Type:' + ' ' + poke.type;
      });
 
 };
@@ -59,9 +69,28 @@ const drawPokemons = (pokemon) => {
 
 
 
+const filterPokemon = (event) => {
+    const inputPokemon = event.target.value.toLowerCase();
+    const filteredPokemon = EVERY_POKEMON.filter((pokemon) => {
+      const sameName = pokemon.name.toLowerCase().includes(inputPokemon);
+      const sameID = pokemon.id === Number(inputPokemon);
+  
+      return sameName || sameID;
+    });
+  
+    drawPokemons(filteredPokemon);
+  };
+  
+  const addAllMyEventsListeners = () => {
+    document.getElementById("input-search").addEventListener("input", filterPokemon);
+  };
+  
+  
+
+
+
+
 const initApp = async () => {
-    const data = await getAllPokemons();
-    console.log(data);
 
    const everyPokemon = await getAllPokemons();
    console.log(everyPokemon);
@@ -71,6 +100,7 @@ const initApp = async () => {
   }
   console.log(EVERY_POKEMON);
   drawPokemons(EVERY_POKEMON);
+  addMyEvents();
 }
 
 initApp();
