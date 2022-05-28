@@ -40,16 +40,42 @@ body {
             font-family: $secondary-font;
             background: #efefbb;
             background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
-            padding: 5px 20px 5px 20px;
+            padding: 3px 30px 3px 30px;
             margin: 10px 10px 10px 10px;
             border: 2px solid;
             border-radius: 10%;
-        
-        }
+
+            .poke-img-container {
+                margin-top: 10px;
+                border-radius: 50%;
+                background-image: url(./Images/batthern-1920x1080.png);
+            }
+
+            .poke-info-container {
+                display: flex; 
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                font-size: 12px;
+                margin-bottom: 10px;
+
+                .poke-id-container {
+                    border-radius: 70%;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    padding: 0px 12px;
+                }
+
+                
+
+               
+
+            
+        } 
       }
       
       
       
 }
 
-
+}

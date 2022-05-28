@@ -74,9 +74,41 @@ body .poke-container .poke-card {
   background: #efefbb;
   background: -webkit-gradient(linear, left top, right top, from(#FDDFDF), color-stop(#DEFDE0), color-stop(#FCF7DE), to(#DEF3FD));
   background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
-  padding: 5px 20px 5px 20px;
+  padding: 3px 30px 3px 30px;
   margin: 10px 10px 10px 10px;
   border: 2px solid;
   border-radius: 10%;
+}
+
+body .poke-container .poke-card .poke-img-container {
+  margin-top: 10px;
+  border-radius: 50%;
+  background-image: url(./Images/batthern-1920x1080.png);
+}
+
+body .poke-container .poke-card .poke-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+body .poke-container .poke-card .poke-info-container .poke-id-container {
+  border-radius: 70%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0px 12px;
 }
 /*# sourceMappingURL=styles.css.map */
