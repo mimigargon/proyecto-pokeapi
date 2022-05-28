@@ -33,31 +33,40 @@ const getPokemon = (url) => {
 
 const drawPokemons = (pokemon) => {
      pokemon.forEach((poke) => {
-        const pokeContainer = document.querySelector('.poke-container')
+        const pokeContainer = document.querySelector('.poke-container');
+
         const pokeDiv = document.createElement('div');
         pokeDiv.classList.add('poke-card');
         pokeContainer.appendChild(pokeDiv);
+
         const pokeImgContainer  = document.createElement('div');
         pokeImgContainer.classList.add('poke-img-container');
         pokeDiv.appendChild(pokeImgContainer); 
+
         const pokeImage = document.createElement('img');
         pokeImgContainer.appendChild(pokeImage)
         pokeImage.src = poke.image;
+
         const pokeInfoContainer = document.createElement('div');
         pokeInfoContainer.classList.add('poke-info-container');
         pokeDiv.appendChild(pokeInfoContainer);
+
         const pokeName = document.createElement('h3');
         pokeInfoContainer.appendChild(pokeName);
         pokeName.innerText = poke.name[0].toUpperCase() + poke.name.slice(1);
+
         const pokeIDContainer = document.createElement('span');
         pokeIDContainer.classList.add('poke-id-container');
         pokeInfoContainer.appendChild(pokeIDContainer);
+
         const pokeId = document.createElement('p');
         pokeIDContainer.appendChild(pokeId);
         pokeId.innerText = '#' + poke.id;
+
         const pokeTypeContainer = document.createElement('div');
         pokeTypeContainer.classList.add('poke-type-container');
         pokeInfoContainer.appendChild(pokeTypeContainer);
+        
         const pokeType = document.createElement('p');
         pokeTypeContainer.appendChild(pokeType);
         pokeType.innerText = 'Type:' + ' ' + poke.type;
