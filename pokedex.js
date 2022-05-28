@@ -65,42 +65,64 @@ const drawPokemons = (pokemon) => {
 
 };
 
+const pokeFilter = (event) => {
+   const pokeInputValue = event.target.value.toLowerCase();
+   const filteredPokemons = EVERY_POKEMON.filter((pokemon) => {
+       const sameName = pokemon.name.toLowerCase().includes(pokeInputValue);
+       const sameId = pokemon.id === Number(pokeInputValue);
 
+       return sameName || sameId;
+   });
+   
+   drawPokemons(filteredPokemons);
+};
 
+const addMyEvent = () => {
+    document.getElementById('input-search').addEventListener('input', pokeFilter);
+};
 
+const pokeFilterByType = (event) => {
+    const typeFilter = event.target.classList[0];
+    if (typeFilter === 'all') {
+        return drawPokemons(EVERY_POKEMON);
+    }
 
-const filterPokemon = (event) => {
-    const inputPokemon = event.target.value.toLowerCase();
-    const filteredPokemon = EVERY_POKEMON.filter((pokemon) => {
-      const sameName = pokemon.name.toLowerCase().includes(inputPokemon);
-      const sameID = pokemon.id === Number(inputPokemon);
-  
-      return sameName || sameID;
+    const filtered = EVERY_POKEMON.filter((pokemon) => {
+        const sameType = pokemon.type.includes(typeFilter);
+        return sameType;
     });
-  
-    drawPokemons(filteredPokemon);
-  };
-  
-  const addAllMyEventsListeners = () => {
-    document.getElementById("input-search").addEventListener("input", filterPokemon);
-  };
-  
-  
+
+    drawPokemons(filtered);
+};
+
+const drawPokeTypeButtons = () => {
+    const buttonTypeContainer = document.querySelector('.types');
+
+    TYPES.forEach((type) => {
+        const pokeButton = document.createElement('span');
+        pokeButton.classList.add('type');
+        pokeButton.addEventListener('click', pokeFilterByType);
+        pokeButton.innerText = type;
+        buttonTypeContainer.appendChild(pokeButton);
+    });
+};
+
+
 
 
 
 
 const initApp = async () => {
-
+    addMyEvent();
    const everyPokemon = await getAllPokemons();
-   console.log(everyPokemon);
+   
    for(const pokemon of everyPokemon.results) {
       const pokemonInfo = await getPokemon(pokemon.url);
       EVERY_POKEMON.push(pokemonInfo);
   }
-  console.log(EVERY_POKEMON);
+  
+  drawPokeTypeButtons();
   drawPokemons(EVERY_POKEMON);
-  addMyEvents();
-}
+};
 
 initApp();
