@@ -26,15 +26,21 @@ const getPokemon = (url) => {
             type: response.types.map((type) => type.type.name).join(', '), 
             image: response.sprites["front_default"], 
         };
+        pokemon.type.forEach((type) => {
+            if(!TYPES.includes(type)) {
+                TYPES.push(type);
+            }
+        });
         return pokemon; 
     })
     .catch((error) => console.log('Error obteniendo los pokemons', error));
 };
 
 const drawPokemons = (pokemon) => {
-     pokemon.forEach((poke) => {
-        const pokeContainer = document.querySelector('.poke-container');
+    const pokeContainer = document.querySelector('.poke-container');
+    pokeContainer.innerText= '';
 
+     pokemon.forEach((poke) => {
         const pokeDiv = document.createElement('div');
         pokeDiv.classList.add('poke-card');
         pokeContainer.appendChild(pokeDiv);
