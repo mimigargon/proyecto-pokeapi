@@ -49,6 +49,7 @@ body .search-box-container #input-search {
   border-bottom: 3px solid #fffefe;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  color: white;
 }
 
 body .search-box-container ::-webkit-input-placeholder {
@@ -83,9 +84,10 @@ body .poke-buttons {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  color: white;
+  color: black;
   font-family: "Lato", sans-serif;
-  font-weight: lighter;
+  font-size: 1.3rem;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -95,6 +97,7 @@ body .poke-buttons span {
   border-radius: 20%;
   margin-top: 40px;
   margin-bottom: 40px;
+  background-color: #FFD700;
 }
 
 body .poke-container {
@@ -132,13 +135,111 @@ body .poke-container .poke-card {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   font-family: "Lato", sans-serif;
-  background: #efefbb;
-  background: -webkit-gradient(linear, left top, right top, from(#FDDFDF), color-stop(#DEFDE0), color-stop(#FCF7DE), to(#DEF3FD));
-  background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
   padding: 3px 30px 3px 30px;
   margin: 10px 10px 10px 10px;
   border: 5px solid #b9afaf;
   border-radius: 10%;
+}
+
+body .poke-container .poke-card:hover {
+  -webkit-animation: shake 1s;
+          animation: shake 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg) scale(0.8);
+            transform: translate(1px, 1px) rotate(0deg) scale(0.8);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-5deg) scale(0.9);
+            transform: translate(-1px, -2px) rotate(-5deg) scale(0.9);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(5deg) scale(1);
+            transform: translate(-3px, 0px) rotate(5deg) scale(1);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg) scale(1.1);
+            transform: translate(3px, 2px) rotate(0deg) scale(1.1);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(5deg) scale(1.2);
+            transform: translate(1px, -1px) rotate(5deg) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-5deg) scale(1.1);
+            transform: translate(-1px, 2px) rotate(-5deg) scale(1.1);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg) scale(1);
+            transform: translate(-3px, 1px) rotate(0deg) scale(1);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-5deg) scale(0.9);
+            transform: translate(3px, 1px) rotate(-5deg) scale(0.9);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(5deg) scale(0.8);
+            transform: translate(-1px, -1px) rotate(5deg) scale(0.8);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg) scale(0.9);
+            transform: translate(1px, 2px) rotate(0deg) scale(0.9);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-5deg) scale(1);
+            transform: translate(1px, -2px) rotate(-5deg) scale(1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg) scale(0.8);
+            transform: translate(1px, 1px) rotate(0deg) scale(0.8);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-5deg) scale(0.9);
+            transform: translate(-1px, -2px) rotate(-5deg) scale(0.9);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(5deg) scale(1);
+            transform: translate(-3px, 0px) rotate(5deg) scale(1);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg) scale(1.1);
+            transform: translate(3px, 2px) rotate(0deg) scale(1.1);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(5deg) scale(1.2);
+            transform: translate(1px, -1px) rotate(5deg) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-5deg) scale(1.1);
+            transform: translate(-1px, 2px) rotate(-5deg) scale(1.1);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg) scale(1);
+            transform: translate(-3px, 1px) rotate(0deg) scale(1);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-5deg) scale(0.9);
+            transform: translate(3px, 1px) rotate(-5deg) scale(0.9);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(5deg) scale(0.8);
+            transform: translate(-1px, -1px) rotate(5deg) scale(0.8);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg) scale(0.9);
+            transform: translate(1px, 2px) rotate(0deg) scale(0.9);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-5deg) scale(1);
+            transform: translate(1px, -2px) rotate(-5deg) scale(1);
+  }
 }
 
 body .poke-container .poke-card .poke-img-container {
