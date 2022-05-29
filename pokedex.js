@@ -1,5 +1,25 @@
 const EVERY_POKEMON = [];
 const TYPES = ['all'];
+const colors = {
+	grass: "#d2f2c2",
+	poison: "#f7cdf7",
+	fire: "#ffd1b5",
+	flying: "#eae3ff",
+	water: "#c2f3ff",
+	bug: "#e0e8a2",
+	normal: "#e6e6c3",
+	electric: "#fff1ba",
+	ground: "#e0ccb1",
+	fighting: "#fcada9",
+	psychic: "#ffc9da",
+	rock: "#f0e09c",
+	fairy: "#ffdee5",
+	steel: "#e6eaf0",
+	ice: "#e8feff",
+	ghost: "#dbbaff",
+	dragon: "#c4bdff",
+	dark: "#a9abb0"
+};
 
 const getAllPokemons = () => {
    return fetch ('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150')
@@ -23,24 +43,29 @@ const getPokemon = (url) => {
         const pokemon = {
             name: response.name,
             id: response.id,
-            type: response.types.map((type) => type.type.name).join(', '), 
-            image: response.sprites["front_default"], 
+            type: response.types.map((type) => type.type.name),
+            image: response.sprites.other['official-artwork']['front_default'],                     
         };
+        
         pokemon.type.forEach((type) => {
-            if(!TYPES.includes(type)) {
-                TYPES.push(type);
+            if (!TYPES.includes(type)) {
+              TYPES.push(type);
             }
-        });
+          });
+    
         return pokemon; 
     })
     .catch((error) => console.log('Error obteniendo los pokemons', error));
 };
 
-const drawPokemons = (pokemon) => {
-    const pokeContainer = document.querySelector('.poke-container');
-    pokeContainer.innerText= '';
 
+
+const drawPokemons = (pokemon) => {
+    const pokeContainer = document.querySelector('.poke-container'); 
+    pokeContainer.innerText = ''; 
      pokemon.forEach((poke) => {
+        const pokeContainer = document.querySelector('.poke-container');
+
         const pokeDiv = document.createElement('div');
         pokeDiv.classList.add('poke-card');
         pokeContainer.appendChild(pokeDiv);
@@ -80,6 +105,18 @@ const drawPokemons = (pokemon) => {
 
 };
 
+//pokeDiv
+//if (TYPES[1]) {
+    //pokeCard.style.background =
+    //'linear-gradient(150deg,' + 
+    //colors[pokemon.type[0].type.name] +
+    //'50%,' +
+   // colors[pokemon.type[1].type.name] +
+    //'50%)';
+//}else{
+    //pokeCard.style.background = colors[TYPES[0]];
+//}
+
 const pokeFilter = (event) => {
    const pokeInputValue = event.target.value.toLowerCase();
    const filteredPokemons = EVERY_POKEMON.filter((pokemon) => {
@@ -111,15 +148,19 @@ const pokeFilterByType = (event) => {
 };
 
 const drawPokeTypeButtons = () => {
-    const buttonTypeContainer = document.querySelector('.types');
-
+    const buttonTypeContainer = document.querySelector('.poke-buttons'); 
+    
     TYPES.forEach((type) => {
         const pokeButton = document.createElement('span');
-        pokeButton.classList.add('type');
+        
+        pokeButton.className = type; 
+                                    
         pokeButton.addEventListener('click', pokeFilterByType);
         pokeButton.innerText = type;
         buttonTypeContainer.appendChild(pokeButton);
     });
+
+    
 };
 
 
@@ -135,6 +176,7 @@ const initApp = async () => {
       const pokemonInfo = await getPokemon(pokemon.url);
       EVERY_POKEMON.push(pokemonInfo);
   }
+  console.log(TYPES);
   
   drawPokeTypeButtons();
   drawPokemons(EVERY_POKEMON);
