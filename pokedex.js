@@ -1,6 +1,7 @@
 const EVERY_POKEMON = [];
 const TYPES = ['all'];
 const colors = {
+    all: '#FFD700',
 	grass: "#d2f2c2",
 	poison: "#f7cdf7",
 	fire: "#ffd1b5",
