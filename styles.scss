@@ -1,12 +1,10 @@
-@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
 
-$principal-font: 'Pokemon Solid', sans-serif;
-$secondary-font: 'Lato', sans-serif;
+$principal-font: 'Lato', sans-serif;
 
 
 body {
-    background-image: url(./Images/batthern-1920x1080.png);
+    background-image: url(./Images/old-wall-1920x1080.png);
 
     header {
         display: flex;
@@ -24,6 +22,49 @@ body {
 
         }
     }
+
+    .search-box-container {
+        text-align: center;
+        
+
+        #input-search {
+            padding: 20px 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            background: transparent;
+            outline: none;
+            border-bottom: 3px solid rgb(255, 254, 254);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+            ::placeholder {
+                color: white;
+            
+        }
+    }
+
+   
+
+    .poke-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        color: white;
+        font-family: $principal-font;
+        font-weight: lighter;
+        cursor: pointer;
+         span {
+            border: 1px solid white;
+            padding: 8px 8px 8px 8px;
+            border-radius: 20%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+         }
+
+    }
     .poke-container {
         display: flex;
         flex-wrap: wrap;
@@ -32,23 +73,31 @@ body {
         justify-content: space-evenly;
 
         .poke-card {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            font-family: $secondary-font;
-            background: #efefbb;
-            background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
-            padding: 3px 30px 3px 30px;
-            margin: 10px 10px 10px 10px;
-            border: 2px solid;
-            border-radius: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        font-family: $principal-font;
+        background: #efefbb;
+        background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
+        padding: 3px 30px 3px 30px;
+        margin: 10px 10px 10px 10px;
+        border: 5px solid rgb(185, 175, 175);
+        border-radius: 10%;
+
+       
+          
 
             .poke-img-container {
                 margin-top: 10px;
                 border-radius: 50%;
-                background-image: url(./Images/batthern-1920x1080.png);
+                background-image: url(./Images/old-wall-1920x1080.png);
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                }
             }
 
             .poke-info-container {
@@ -72,7 +121,7 @@ body {
 
             
         } 
-      }
+     }
       
       
       

@@ -1,7 +1,6 @@
-@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400&display=swap");
 body {
-  background-image: url(./Images/batthern-1920x1080.png);
+  background-image: url(./Images/old-wall-1920x1080.png);
 }
 
 body header {
@@ -34,6 +33,68 @@ body header .poke-logo {
           align-items: center;
   width: 500px;
   padding-bottom: 50px;
+}
+
+body .search-box-container {
+  text-align: center;
+}
+
+body .search-box-container #input-search {
+  padding: 20px 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  outline: none;
+  border-bottom: 3px solid #fffefe;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+body .search-box-container ::-webkit-input-placeholder {
+  color: white;
+}
+
+body .search-box-container :-ms-input-placeholder {
+  color: white;
+}
+
+body .search-box-container ::-ms-input-placeholder {
+  color: white;
+}
+
+body .search-box-container ::placeholder {
+  color: white;
+}
+
+body .poke-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+body .poke-buttons span {
+  border: 1px solid white;
+  padding: 8px 8px 8px 8px;
+  border-radius: 20%;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 body .poke-container {
@@ -76,14 +137,19 @@ body .poke-container .poke-card {
   background: linear-gradient(to right, #FDDFDF, #DEFDE0, #FCF7DE, #DEF3FD);
   padding: 3px 30px 3px 30px;
   margin: 10px 10px 10px 10px;
-  border: 2px solid;
+  border: 5px solid #b9afaf;
   border-radius: 10%;
 }
 
 body .poke-container .poke-card .poke-img-container {
   margin-top: 10px;
   border-radius: 50%;
-  background-image: url(./Images/batthern-1920x1080.png);
+  background-image: url(./Images/old-wall-1920x1080.png);
+}
+
+body .poke-container .poke-card .poke-img-container img {
+  width: 120px;
+  height: 120px;
 }
 
 body .poke-container .poke-card .poke-info-container {
