@@ -101,21 +101,23 @@ const drawPokemons = (pokemon) => {
         const pokeType = document.createElement('p');
         pokeTypeContainer.appendChild(pokeType);
         pokeType.innerText = 'Type:' + ' ' + poke.type;
+
+        if (poke.type[1]) {
+            pokeDiv.style.background =
+                'linear-gradient(150deg,' + 
+                colors[poke.type[0]] +
+                ' 50%,' +
+               colors[poke.type[1]] +
+            ' 50%)';
+            }else{
+                pokeDiv.style.background = colors[poke.type[0]];
+            }
      });
 
 };
 
-//pokeDiv
-//if (TYPES[1]) {
-    //pokeCard.style.background =
-    //'linear-gradient(150deg,' + 
-    //colors[pokemon.type[0].type.name] +
-    //'50%,' +
-   // colors[pokemon.type[1].type.name] +
-    //'50%)';
-//}else{
-    //pokeCard.style.background = colors[TYPES[0]];
-//}
+
+
 
 const pokeFilter = (event) => {
    const pokeInputValue = event.target.value.toLowerCase();
@@ -157,6 +159,7 @@ const drawPokeTypeButtons = () => {
                                     
         pokeButton.addEventListener('click', pokeFilterByType);
         pokeButton.innerText = type;
+        pokeButton.style.background = colors[type];
         buttonTypeContainer.appendChild(pokeButton);
     });
 
