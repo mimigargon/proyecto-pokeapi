@@ -65,7 +65,7 @@ body {
             border-radius: 20%;
             margin-top: 40px;
             margin-bottom: 40px;
-            background-color: #FFD700;
+           
          }
 
     }
@@ -90,8 +90,9 @@ body {
 
         &:hover {
            
-            animation: shake 1s;
+            animation: shake 1.5s;
             animation-iteration-count: infinite;
+            box-shadow: 3px 3px 39px 24px #ccc5c5;
         }
 
         @keyframes shake {
@@ -119,6 +120,8 @@ body {
                 img {
                     width: 120px;
                     height: 120px;
+
+                   
                 }
             }
 
@@ -135,6 +138,14 @@ body {
                     border-radius: 70%;
                     background-color: rgba(0, 0, 0, 0.1);
                     padding: 0px 12px;
+                }
+
+                .poke-type-container {
+                    border-radius: 46%;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    margin-top: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                 }
 
                 

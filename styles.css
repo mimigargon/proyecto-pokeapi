@@ -97,7 +97,6 @@ body .poke-buttons span {
   border-radius: 20%;
   margin-top: 40px;
   margin-bottom: 40px;
-  background-color: #FFD700;
 }
 
 body .poke-container {
@@ -142,10 +141,12 @@ body .poke-container .poke-card {
 }
 
 body .poke-container .poke-card:hover {
-  -webkit-animation: shake 1s;
-          animation: shake 1s;
+  -webkit-animation: shake 1.5s;
+          animation: shake 1.5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+  -webkit-box-shadow: 3px 3px 39px 24px #ccc5c5;
+          box-shadow: 3px 3px 39px 24px #ccc5c5;
 }
 
 @-webkit-keyframes shake {
@@ -277,5 +278,13 @@ body .poke-container .poke-card .poke-info-container .poke-id-container {
   border-radius: 70%;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 0px 12px;
+}
+
+body .poke-container .poke-card .poke-info-container .poke-type-container {
+  border-radius: 46%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
